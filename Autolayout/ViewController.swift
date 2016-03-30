@@ -14,6 +14,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
+        
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Lorem ipsum dolor sit amet"
@@ -23,7 +25,7 @@ class ViewController: UIViewController {
         label.snp_makeConstraints { make in
             make.leading.equalTo(20)
             make.trailing.equalTo(-20)
-            make.top.equalTo(20)
+            make.top.equalTo(0)
         }
         
         let redView = UIView()
