@@ -45,6 +45,25 @@ class ViewController: UIViewController {
             make.height.equalTo(redView.snp_height)
             make.width.equalTo(redView.snp_width)
         }
+        
+        let profileImage = UIImage(named: "avatar")
+        let profilePictureView = UIImageView(image: profileImage)
+        self.view.addSubview(profilePictureView)
+        profilePictureView.snp_makeConstraints { make in
+            make.leading.equalTo(20)
+            make.top.equalTo(redView.snp_bottom).offset(20)
+        }
+        profilePictureView.setContentHuggingPriority(UILayoutPriorityRequired, forAxis: .Horizontal)
+        
+        let titleLabel = UILabel()
+        titleLabel.text = "Jan Mísař"
+        self.view.addSubview(titleLabel)
+        titleLabel.snp_makeConstraints { make in
+            make.leading.equalTo(profilePictureView.snp_trailing).offset(20)
+            make.centerY.equalTo(profilePictureView)
+            make.trailing.equalTo(-20)
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
